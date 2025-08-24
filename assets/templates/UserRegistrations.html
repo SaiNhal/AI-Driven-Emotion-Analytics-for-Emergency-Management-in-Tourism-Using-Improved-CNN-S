@@ -1,0 +1,90 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block contents%}
+
+<div class="home">
+		<div class="home_slider_container">
+
+			<!-- Home Slider -->
+			<div class="owl-carousel owl-theme home_slider">
+
+				<!-- Home Slider Item -->
+				<div class="owl-item">
+					<div class="home_slider_background" style="background-image:url({%static 'images/home_slider_1.jpg'%})"></div>
+					<div class="home_slider_content">
+						<div class="container">
+							<div class="row">
+								<div class="col text-center">
+									<div class="home_slider_title">User Registeration </div>
+                                                 <center>
+                                        <form action="{%url 'UserRegisterActions'%}" method="POST" class="text-primary comment_form"" style="width:100%">
+
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td class="text-primary" style="font-size:23px;">User Name</td>
+                            <td>{{form.name}}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:23px;">Login ID</td>
+                            <td>{{form.loginid}}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:23px;">Password</td>
+                            <td>{{form.password}}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:23px;">Mobile</td>
+                            <td>{{form.mobile}}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:23px;">email</td>
+                            <td>{{form.email}}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:23px;">Locality</td>
+                            <td>{{form.locality}}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:23px;">Address</td>
+                            <td>{{form.address}}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:23px;">City</td>
+                            <td>{{form.city}}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:23px;">State</td>
+                            <td>{{form.state}}</td>
+                        </tr>
+                        <tr>
+
+                            <td>{{form.status}}</td>
+                        </tr>
+<tr><td></td>
+     <td><button type="submit" class="comment_button trans_200" style="font-size: 21px; margin-top: 19px;">Register</button></td>
+                        </tr>
+
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='GREEN'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+                                                 </center>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{%endblock%}

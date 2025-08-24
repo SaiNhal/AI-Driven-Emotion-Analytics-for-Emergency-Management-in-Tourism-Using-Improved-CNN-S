@@ -1,0 +1,36 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+
+<div class="home">
+		<div class="home_slider_container">
+
+			<!-- Home Slider -->
+			<div class="owl-carousel owl-theme home_slider">
+
+				<!-- Home Slider Item -->
+				<div class="owl-item">
+					<div class="home_slider_background" style="background-image:url({%static 'images/home_slider_1.jpg'%})"></div>
+					<div class="home_slider_content">
+						<div class="container">
+							<div class="row">
+								<div class="col text-center">
+									<div class="home_slider_title">AI-DRIVEN EMOTION ANALYTICS FOR EMERGENCY MANAGEMENT IN TOURISM USING IMPROVED CNN </div>
+									<div class="home_slider_subtitle">By Image Processing and Machine Learning</div>
+								 
+									
+									<div class="home_slider_form_container">
+										<p>
+                                            <font color="Blue" size="4" >The system uses machine learning and image processing for real-time emotion recognition through facial expressions and voice analysis. Unlike traditional models, it enables live stress detection for immediate intervention. 3D CNN architectures enhance accuracy in emotional analysis. Sentiment analysis and facial recognition refine stress detection. Intelligent feedback loops improve model efficiency. This ensures early intervention and better emergency response. The approach enhances safety and well-being in stressful environments. It promotes a secure and stress-free experience through adaptive learning.</font>
+                                        </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{%endblock%}

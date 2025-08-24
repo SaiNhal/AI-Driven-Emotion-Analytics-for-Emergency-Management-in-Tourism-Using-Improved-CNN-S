@@ -1,0 +1,78 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block contents%}
+
+<div class="home">
+		<div class="home_slider_container">
+
+			<!-- Home Slider -->
+			<div class="owl-carousel owl-theme home_slider">
+
+				<!-- Home Slider Item -->
+				<div class="owl-item">
+					<div class="home_slider_background" style="background-image:url({%static 'images/home_slider_1.jpg'%})"></div>
+					<div class="home_slider_content">
+						<div class="container">
+							<div class="row">
+								<div class="col text-center">
+									<div class="home_slider_title">User Login  </div>
+									<div class="home_slider_subtitle"></div>
+									<div class="home_slider_form_container">
+                                        <p>
+                                        <center>
+                                    <form action="{%url 'UserLoginCheck'%}" method="POST" class="text-primary" style="width:100%">
+                    {% csrf_token %}
+                    <table>
+                        <div class="form-group row" style="margin-left:24rem">
+                <div class="col-md-6">
+                  <div style="display:flex; gap:2px;">
+                    <div style="white-space: nowrap; font-size:20px; color:black;">Login Id</div>
+                    <input type="text" class="form-control" name="loginname" required placeholder="Enter Login Id">
+                  </div>
+                  
+                </div>
+              </div>
+                        <div class="form-group row" style="margin-left:24rem">
+                <div class="col-md-6">
+                  <div style="display:flex; gap:2px;">
+                    <div style="white-space: nowrap; font-size:20px; color:black;">Password</div>
+                    <input type="password" class="form-control" name="pswd" required placeholder="Enter password">
+                  </div>
+                </div>
+              </div>
+
+
+                        <tr>
+                            <td>
+                                <button class="btn btn-block btn-primary text-white px-5" style="margin-left: 5rem; width: 10rem;"
+                                        type="submit">
+                                    Login
+                                </button>
+                            </td>
+                        </tr>
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='RED'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+                                </center>
+
+                                    </p>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{%endblock%}
